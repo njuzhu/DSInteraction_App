@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */; };
+		8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */; };
+		8EF05CD21A7C774200CCE8BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CD11A7C774200CCE8BF /* ViewController.swift */; };
+		8EF05CD51A7C774200CCE8BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF05CD31A7C774200CCE8BF /* Main.storyboard */; };
+		8EF05CD71A7C774200CCE8BF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF05CD61A7C774200CCE8BF /* Images.xcassets */; };
+		8EF05CDA1A7C774200CCE8BF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF05CD81A7C774200CCE8BF /* LaunchScreen.xib */; };
+		8EF05CE61A7C774200CCE8BF /* DSInteractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CE51A7C774200CCE8BF /* DSInteractionTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EF05CE01A7C774200CCE8BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EF05CBF1A7C774200CCE8BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EF05CC61A7C774200CCE8BF;
+			remoteInfo = DSInteraction;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8EF05CC71A7C774200CCE8BF /* DSInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EF05CCB1A7C774200CCE8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8EF05CCF1A7C774200CCE8BF /* DSInteraction.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DSInteraction.xcdatamodel; sourceTree = "<group>"; };
+		8EF05CD11A7C774200CCE8BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8EF05CD41A7C774200CCE8BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8EF05CD61A7C774200CCE8BF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8EF05CD91A7C774200CCE8BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8EF05CDF1A7C774200CCE8BF /* DSInteractionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSInteractionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EF05CE41A7C774200CCE8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EF05CE51A7C774200CCE8BF /* DSInteractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSInteractionTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EF05CC41A7C774200CCE8BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF05CDC1A7C774200CCE8BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8EF05CBE1A7C774200CCE8BF = {
+			isa = PBXGroup;
+			children = (
+				8EF05CC91A7C774200CCE8BF /* DSInteraction */,
+				8EF05CE21A7C774200CCE8BF /* DSInteractionTests */,
+				8EF05CC81A7C774200CCE8BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EF05CC81A7C774200CCE8BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EF05CC71A7C774200CCE8BF /* DSInteraction.app */,
+				8EF05CDF1A7C774200CCE8BF /* DSInteractionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EF05CC91A7C774200CCE8BF /* DSInteraction */ = {
+			isa = PBXGroup;
+			children = (
+				8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */,
+				8EF05CD11A7C774200CCE8BF /* ViewController.swift */,
+				8EF05CD31A7C774200CCE8BF /* Main.storyboard */,
+				8EF05CD61A7C774200CCE8BF /* Images.xcassets */,
+				8EF05CD81A7C774200CCE8BF /* LaunchScreen.xib */,
+				8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */,
+				8EF05CCA1A7C774200CCE8BF /* Supporting Files */,
+			);
+			path = DSInteraction;
+			sourceTree = "<group>";
+		};
+		8EF05CCA1A7C774200CCE8BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8EF05CCB1A7C774200CCE8BF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EF05CE21A7C774200CCE8BF /* DSInteractionTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EF05CE51A7C774200CCE8BF /* DSInteractionTests.swift */,
+				8EF05CE31A7C774200CCE8BF /* Supporting Files */,
+			);
+			path = DSInteractionTests;
+			sourceTree = "<group>";
+		};
+		8EF05CE31A7C774200CCE8BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8EF05CE41A7C774200CCE8BF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EF05CC61A7C774200CCE8BF /* DSInteraction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EF05CE91A7C774300CCE8BF /* Build configuration list for PBXNativeTarget "DSInteraction" */;
+			buildPhases = (
+				8EF05CC31A7C774200CCE8BF /* Sources */,
+				8EF05CC41A7C774200CCE8BF /* Frameworks */,
+				8EF05CC51A7C774200CCE8BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DSInteraction;
+			productName = DSInteraction;
+			productReference = 8EF05CC71A7C774200CCE8BF /* DSInteraction.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8EF05CDE1A7C774200CCE8BF /* DSInteractionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EF05CEC1A7C774300CCE8BF /* Build configuration list for PBXNativeTarget "DSInteractionTests" */;
+			buildPhases = (
+				8EF05CDB1A7C774200CCE8BF /* Sources */,
+				8EF05CDC1A7C774200CCE8BF /* Frameworks */,
+				8EF05CDD1A7C774200CCE8BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EF05CE11A7C774200CCE8BF /* PBXTargetDependency */,
+			);
+			name = DSInteractionTests;
+			productName = DSInteractionTests;
+			productReference = 8EF05CDF1A7C774200CCE8BF /* DSInteractionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EF05CBF1A7C774200CCE8BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Zhu;
+				TargetAttributes = {
+					8EF05CC61A7C774200CCE8BF = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					8EF05CDE1A7C774200CCE8BF = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 8EF05CC61A7C774200CCE8BF;
+					};
+				};
+			};
+			buildConfigurationList = 8EF05CC21A7C774200CCE8BF /* Build configuration list for PBXProject "DSInteraction" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EF05CBE1A7C774200CCE8BF;
+			productRefGroup = 8EF05CC81A7C774200CCE8BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EF05CC61A7C774200CCE8BF /* DSInteraction */,
+				8EF05CDE1A7C774200CCE8BF /* DSInteractionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EF05CC51A7C774200CCE8BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EF05CD51A7C774200CCE8BF /* Main.storyboard in Resources */,
+				8EF05CDA1A7C774200CCE8BF /* LaunchScreen.xib in Resources */,
+				8EF05CD71A7C774200CCE8BF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF05CDD1A7C774200CCE8BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EF05CC31A7C774200CCE8BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EF05CD21A7C774200CCE8BF /* ViewController.swift in Sources */,
+				8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */,
+				8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF05CDB1A7C774200CCE8BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EF05CE61A7C774200CCE8BF /* DSInteractionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EF05CE11A7C774200CCE8BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EF05CC61A7C774200CCE8BF /* DSInteraction */;
+			targetProxy = 8EF05CE01A7C774200CCE8BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8EF05CD31A7C774200CCE8BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EF05CD41A7C774200CCE8BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8EF05CD81A7C774200CCE8BF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EF05CD91A7C774200CCE8BF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8EF05CE71A7C774300CCE8BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8EF05CE81A7C774300CCE8BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EF05CEA1A7C774300CCE8BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DSInteraction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8EF05CEB1A7C774300CCE8BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DSInteraction/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8EF05CED1A7C774300CCE8BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DSInteractionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DSInteraction.app/DSInteraction";
+			};
+			name = Debug;
+		};
+		8EF05CEE1A7C774300CCE8BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DSInteractionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DSInteraction.app/DSInteraction";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EF05CC21A7C774200CCE8BF /* Build configuration list for PBXProject "DSInteraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EF05CE71A7C774300CCE8BF /* Debug */,
+				8EF05CE81A7C774300CCE8BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EF05CE91A7C774300CCE8BF /* Build configuration list for PBXNativeTarget "DSInteraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EF05CEA1A7C774300CCE8BF /* Debug */,
+				8EF05CEB1A7C774300CCE8BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8EF05CEC1A7C774300CCE8BF /* Build configuration list for PBXNativeTarget "DSInteractionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EF05CED1A7C774300CCE8BF /* Debug */,
+				8EF05CEE1A7C774300CCE8BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8EF05CCF1A7C774200CCE8BF /* DSInteraction.xcdatamodel */,
+			);
+			currentVersion = 8EF05CCF1A7C774200CCE8BF /* DSInteraction.xcdatamodel */;
+			path = DSInteraction.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8EF05CBF1A7C774200CCE8BF /* Project object */;
+}
