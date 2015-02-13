@@ -1,35 +1,37 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  DSInteraction
 //
-//  Created by Zhu on 15/1/31.
+//  Created by Zhu on 15/2/10.
 //  Copyright (c) 2015年 Zhu. All rights reserved.
 //
 
 import UIKit
 import Alamofire
-import CoreData
 
-class ViewController: UIViewController {
-    
-    var dataAttr:Array<AnyObject> = []
-    
+class RegisterViewController: UIViewController {
+
+    @IBOutlet var name: UITextField!
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
+    @IBOutlet var passwordConfirm: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
+        // Do any additional setup after loading the view.
+    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        name.becomeFirstResponder()
     }
+    
 
-    @IBAction func logIn(sender: AnyObject) {
-        if (email.text == "" || password.text == "") {
+    @IBAction func register(sender: AnyObject) {
+        if (name.text == "" || email.text == "" || password.text == "" || passwordConfirm.text == "") {
             let alert = UIAlertView()
             alert.title = "请输入内容！"
             alert.message = "昵称/邮箱/密码不可为空"
@@ -45,7 +47,16 @@ class ViewController: UIViewController {
             alert.show()
             return
         }
-        Alamofire.request(.GET, "http://localhost:8080/DSInteraction/mobile/login.action", parameters: ["email": "\(email.text)", "password":"\(password.text)"])
+        if (password.text != passwordConfirm.text) {
+            let alert = UIAlertView()
+            alert.title = "密码前后不一致！"
+            alert.message = "请重新输入密码"
+            alert.addButtonWithTitle("OK")
+            password.text = ""
+            passwordConfirm.text = ""
+            alert.show()
+        }
+        Alamofire.request(.GET, "http://localhost:8080/DSInteraction/mobile/register.action", parameters: ["email": "\(email.text)", "password":"\(password.text)", "name":"\(name.text)"])
             .responseJSON { (request, response, data, error) -> Void in
                 if !(data is NSDictionary) {
                     let alert = UIAlertView()
@@ -58,10 +69,12 @@ class ViewController: UIViewController {
                 var dicData = data! as NSDictionary
                 if let result: AnyObject = dicData["result"] {
                     let alert = UIAlertView()
-                    alert.title = "请输入正确账号和密码"
-                    alert.message = "账号和密码不匹配，请重新输入密码"
+                    alert.title = "该email已存在！"
+                    alert.message = "请重新输入email"
                     alert.addButtonWithTitle("OK")
+                    self.email.text = ""
                     self.password.text = ""
+                    self.passwordConfirm.text = ""
                     alert.show()
                 } else {
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -81,15 +94,13 @@ class ViewController: UIViewController {
                         }
                     }
                     MobileUserDB.insertMobileUser(dictParam)
-                    println("finish login")
+                    println("finish register")
                 }
         }
     }
     
-    @IBAction func visit(sender: AnyObject) {
-        println("visit")
-    }
- 
+    
+    
     // MARK: -Regex Match
     func regexMatch(pattern:String,matchString:String) -> Bool{
         var error:NSError?
@@ -97,5 +108,15 @@ class ViewController: UIViewController {
         let matches = expression?.matchesInString(matchString, options: nil, range: NSMakeRange(0, countElements(matchString)))
         return matches?.count > 0
     }
-}
+    
+    /*
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
