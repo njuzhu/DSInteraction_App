@@ -9,7 +9,7 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 import CoreData
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             alert.show()
             return
         }
-        Alamofire.request(.GET, "http://localhost:8080/DSInteraction/mobile/login.action", parameters: ["email": "\(email.text)", "password":"\(password.text)"])
+        request(.GET, "http://localhost:8080/DSInteraction/mobile/login.action", parameters: ["email": "\(email.text)", "password":"\(password.text)"])
             .responseJSON { (request, response, data, error) -> Void in
                 if !(data is NSDictionary) {
                     let alert = UIAlertView()

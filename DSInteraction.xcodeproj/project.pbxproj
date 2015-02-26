@@ -11,8 +11,8 @@
 		8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867771A8BC23000C6AD70 /* MobileUser.swift */; };
 		8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */; };
 		8E847A511A89031400FD8CCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E847A501A89031400FD8CCD /* MainViewController.swift */; };
+		8E8D9D3C1A9F2BD500DB7A79 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D9D3B1A9F2BD500DB7A79 /* Alamofire.swift */; };
 		8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */; };
-		8ED64D0C1A89C35800B86829 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED64D091A89C2BD00B86829 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */; };
 		8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */; };
 		8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */; };
@@ -24,20 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8ED64D081A89C2BD00B86829 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8ED64D031A89C2B300B86829 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 27AB60071A7FAFBF0069F786;
-			remoteInfo = Alamofire;
-		};
-		8ED64D0A1A89C2BD00B86829 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8ED64D031A89C2B300B86829 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 27AB60121A7FAFBF0069F786;
-			remoteInfo = AlamofireTests;
-		};
 		8EF05CE01A7C774200CCE8BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8EF05CBF1A7C774200CCE8BF /* Project object */;
@@ -52,8 +38,9 @@
 		8E6867771A8BC23000C6AD70 /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUser.swift; sourceTree = "<group>"; };
 		8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameEditViewController.swift; sourceTree = "<group>"; };
 		8E847A501A89031400FD8CCD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8E8D9D3B1A9F2BD500DB7A79 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		8E8D9D4A1A9F32F900DB7A79 /* Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
 		8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewController.swift; sourceTree = "<group>"; };
-		8ED64D031A89C2B300B86829 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../source/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8EF05CC71A7C774200CCE8BF /* DSInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF05CCB1A7C774200CCE8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED64D0C1A89C35800B86829 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,21 +93,21 @@
 			name = dbHelper;
 			sourceTree = "<group>";
 		};
+		8E8D9D3A1A9F2B7700DB7A79 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				8E8D9D4A1A9F32F900DB7A79 /* Alamofire.h */,
+				8E8D9D3B1A9F2BD500DB7A79 /* Alamofire.swift */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 		8ED64D001A89AE5800B86829 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				8E6867771A8BC23000C6AD70 /* MobileUser.swift */,
 			);
 			name = model;
-			sourceTree = "<group>";
-		};
-		8ED64D041A89C2B300B86829 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8ED64D091A89C2BD00B86829 /* Alamofire.framework */,
-				8ED64D0B1A89C2BD00B86829 /* AlamofireTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8EF05CBE1A7C774200CCE8BF = {
@@ -145,12 +131,12 @@
 		8EF05CC91A7C774200CCE8BF /* DSInteraction */ = {
 			isa = PBXGroup;
 			children = (
-				8ED64D031A89C2B300B86829 /* Alamofire.xcodeproj */,
 				8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */,
 				8EF05CD31A7C774200CCE8BF /* Main.storyboard */,
 				8E5BAFD01A8E365800D3C6F4 /* viewController */,
 				8ED64D001A89AE5800B86829 /* model */,
 				8E6867741A8B0B9900C6AD70 /* dbHelper */,
+				8E8D9D3A1A9F2B7700DB7A79 /* lib */,
 				8EF05CD61A7C774200CCE8BF /* Images.xcassets */,
 				8EF05CD81A7C774200CCE8BF /* LaunchScreen.xib */,
 				8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */,
@@ -251,12 +237,6 @@
 			mainGroup = 8EF05CBE1A7C774200CCE8BF;
 			productRefGroup = 8EF05CC81A7C774200CCE8BF /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8ED64D041A89C2B300B86829 /* Products */;
-					ProjectRef = 8ED64D031A89C2B300B86829 /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8EF05CC61A7C774200CCE8BF /* DSInteraction */,
@@ -264,23 +244,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		8ED64D091A89C2BD00B86829 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 8ED64D081A89C2BD00B86829 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8ED64D0B1A89C2BD00B86829 /* AlamofireTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AlamofireTests.xctest;
-			remoteRef = 8ED64D0A1A89C2BD00B86829 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8EF05CC51A7C774200CCE8BF /* Resources */ = {
@@ -313,6 +276,7 @@
 				8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */,
 				8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */,
 				8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */,
+				8E8D9D3C1A9F2BD500DB7A79 /* Alamofire.swift in Sources */,
 				8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */,
 				8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */,
 				8E847A511A89031400FD8CCD /* MainViewController.swift in Sources */,
@@ -438,7 +402,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (S3G6DJ247U)";
 				INFOPLIST_FILE = DSInteraction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -448,7 +415,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (S3G6DJ247U)";
 				INFOPLIST_FILE = DSInteraction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -9,7 +9,7 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
@@ -59,7 +59,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             passwordConfirm.text = ""
             alert.show()
         }
-        Alamofire.request(.GET, "http://localhost:8080/DSInteraction/mobile/register.action", parameters: ["email": "\(email.text)", "password":"\(password.text)", "name":"\(name.text)"])
+        request(.GET, "http://localhost:8080/DSInteraction/mobile/register.action", parameters: ["email": "\(email.text)", "password":"\(password.text)", "name":"\(name.text)"])
             .responseJSON { (request, response, data, error) -> Void in
                 if !(data is NSDictionary) {
                     let alert = UIAlertView()

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 
 class NicknameEditViewController: UIViewController, UITextFieldDelegate {
 
@@ -44,7 +44,7 @@ class NicknameEditViewController: UIViewController, UITextFieldDelegate {
             nicknameField.text = mobileUser.name
             return
         }
-        Alamofire.request(.GET, "http://localhost:8080/DSInteraction/mobile/updateByName.action", parameters: ["id": "\(mobileUser.uid)",
+        request(.GET, "http://localhost:8080/DSInteraction/mobile/updateByName.action", parameters: ["id": "\(mobileUser.uid)",
             "name":"\(nicknameField.text)"])
             .responseJSON { (request, response, data, error) -> Void in
                 if !(data is NSDictionary) {
