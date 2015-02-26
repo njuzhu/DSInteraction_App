@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		8E6867761A8B0C2400C6AD70 /* MobileUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */; };
 		8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867771A8BC23000C6AD70 /* MobileUser.swift */; };
+		8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */; };
 		8E847A511A89031400FD8CCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E847A501A89031400FD8CCD /* MainViewController.swift */; };
+		8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */; };
 		8ED64D0C1A89C35800B86829 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED64D091A89C2BD00B86829 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */; };
 		8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */; };
@@ -48,7 +50,9 @@
 /* Begin PBXFileReference section */
 		8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserDB.swift; sourceTree = "<group>"; };
 		8E6867771A8BC23000C6AD70 /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUser.swift; sourceTree = "<group>"; };
+		8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameEditViewController.swift; sourceTree = "<group>"; };
 		8E847A501A89031400FD8CCD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewController.swift; sourceTree = "<group>"; };
 		8ED64D031A89C2B300B86829 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../source/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8EF05CC71A7C774200CCE8BF /* DSInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +87,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E5BAFD01A8E365800D3C6F4 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				8EF05CD11A7C774200CCE8BF /* ViewController.swift */,
+				8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */,
+				8E847A501A89031400FD8CCD /* MainViewController.swift */,
+				8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */,
+				8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */,
+			);
+			name = viewController;
+			sourceTree = "<group>";
+		};
 		8E6867741A8B0B9900C6AD70 /* dbHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,16 +147,14 @@
 			children = (
 				8ED64D031A89C2B300B86829 /* Alamofire.xcodeproj */,
 				8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */,
-				8EF05CD11A7C774200CCE8BF /* ViewController.swift */,
-				8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */,
 				8EF05CD31A7C774200CCE8BF /* Main.storyboard */,
+				8E5BAFD01A8E365800D3C6F4 /* viewController */,
 				8ED64D001A89AE5800B86829 /* model */,
 				8E6867741A8B0B9900C6AD70 /* dbHelper */,
 				8EF05CD61A7C774200CCE8BF /* Images.xcassets */,
 				8EF05CD81A7C774200CCE8BF /* LaunchScreen.xib */,
 				8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */,
 				8EF05CCA1A7C774200CCE8BF /* Supporting Files */,
-				8E847A501A89031400FD8CCD /* MainViewController.swift */,
 			);
 			path = DSInteraction;
 			sourceTree = "<group>";
@@ -296,8 +310,10 @@
 				8E6867761A8B0C2400C6AD70 /* MobileUserDB.swift in Sources */,
 				8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */,
 				8EF05CD21A7C774200CCE8BF /* ViewController.swift in Sources */,
+				8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */,
 				8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */,
 				8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */,
+				8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */,
 				8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */,
 				8E847A511A89031400FD8CCD /* MainViewController.swift in Sources */,
 			);

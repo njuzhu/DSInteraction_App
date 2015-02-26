@@ -4,7 +4,7 @@
 //
 //  Created by Zhu on 15/2/11.
 //  Copyright (c) 2015年 Zhu. All rights reserved.
-//
+//－
 
 import UIKit
 import CoreData
@@ -65,16 +65,26 @@ class MobileUserDB: NSObject {
         
         let index = listArray.indexOfObject(obj)
         var mobileUser = listArray[index] as MobileUser
-        mobileUser.setValue(dataDict["uid"], forKey: "uid")
-        mobileUser.setValue(dataDict["email"], forKey: "email")
-        mobileUser.setValue(dataDict["password"], forKey: "password")
-        mobileUser.setValue(dataDict["name"], forKey: "name")
+        if let uid: AnyObject = dataDict["uid"] {
+            mobileUser.setValue(dataDict["uid"], forKey: "uid")
+        }
+        if let email: AnyObject = dataDict["email"] {
+            mobileUser.setValue(dataDict["email"], forKey: "email")
+        }
+        if let password: AnyObject = dataDict["password"] {
+            mobileUser.setValue(dataDict["password"], forKey: "password")
+        }
+        if let name: AnyObject = dataDict["name"] {
+            mobileUser.setValue(dataDict["name"], forKey: "name")
+        }
         if let image: AnyObject = dataDict["image"] {
             mobileUser.setValue(dataDict["image"], forKey: "image")
         } else {
             mobileUser.setValue("", forKey: "image")
         }
-        mobileUser.setValue(dataDict["point"], forKey: "point")
+        if let point: AnyObject = dataDict["point"] {
+            mobileUser.setValue(dataDict["point"], forKey: "point")
+        }
         var result = app.managedObjectContext?.save(&error)
         return result!
     }

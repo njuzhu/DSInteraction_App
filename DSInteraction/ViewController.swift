@@ -1,4 +1,6 @@
 //
+//  LogIn
+//
 //  ViewController.swift
 //  DSInteraction
 //
@@ -10,7 +12,7 @@ import UIKit
 import Alamofire
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     var dataAttr:Array<AnyObject> = []
     
@@ -20,7 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        email.delegate = self
+        email.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,4 +1,6 @@
 //
+//  Register
+//
 //  RegisterViewController.swift
 //  DSInteraction
 //
@@ -9,7 +11,7 @@
 import UIKit
 import Alamofire
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var name: UITextField!
     @IBOutlet var email: UITextField!
@@ -20,7 +22,8 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    
+        name.delegate = self
+        name.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
