@@ -237,7 +237,7 @@
         <!--扫一扫-->
         <scene sceneID="lX9-tj-aDb">
             <objects>
-                <viewController id="bfH-mZ-tkH" sceneMemberID="viewController">
+                <viewController id="bfH-mZ-tkH" customClass="TwoDViewController" customModule="DSInteraction" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cBQ-ma-0CY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

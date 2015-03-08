@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 //        MobileUserDB.deleteAllMobileUsers()
+        
         if MobileUserDB.getAllMobileUsers().count > 0 {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let mainViewNavigationController : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewNavigation") as UIViewController
