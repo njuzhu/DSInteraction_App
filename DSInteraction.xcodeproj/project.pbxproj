@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E3C2F9F1AADBE570023AEF1 /* TempInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C2F9E1AADBE570023AEF1 /* TempInfoTableViewController.swift */; };
+		8E3C2FA11AADCC4F0023AEF1 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C2FA01AADCC4F0023AEF1 /* WaitingViewController.swift */; };
 		8E6867761A8B0C2400C6AD70 /* MobileUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */; };
 		8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867771A8BC23000C6AD70 /* MobileUser.swift */; };
 		8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */; };
 		8E7938C61AA03E6300BD6AF0 /* TwoDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7938C51AA03E6300BD6AF0 /* TwoDViewController.swift */; };
 		8E7938C91AA03EC500BD6AF0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7938C71AA03EC500BD6AF0 /* AVFoundation.framework */; };
 		8E7938CA1AA03EC500BD6AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7938C81AA03EC500BD6AF0 /* Foundation.framework */; };
+		8E7B20411AAD4375009E598D /* TempInfoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B20401AAD4375009E598D /* TempInfoDB.swift */; };
+		8E7B20431AAD4850009E598D /* TempInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B20421AAD4850009E598D /* TempInfo.swift */; };
 		8E847A511A89031400FD8CCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E847A501A89031400FD8CCD /* MainViewController.swift */; };
 		8E8D9D3C1A9F2BD500DB7A79 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D9D3B1A9F2BD500DB7A79 /* Alamofire.swift */; };
 		8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */; };
@@ -37,12 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E3C2F9E1AADBE570023AEF1 /* TempInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfoTableViewController.swift; sourceTree = "<group>"; };
+		8E3C2FA01AADCC4F0023AEF1 /* WaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
 		8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserDB.swift; sourceTree = "<group>"; };
 		8E6867771A8BC23000C6AD70 /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUser.swift; sourceTree = "<group>"; };
 		8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameEditViewController.swift; sourceTree = "<group>"; };
 		8E7938C51AA03E6300BD6AF0 /* TwoDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoDViewController.swift; sourceTree = "<group>"; };
 		8E7938C71AA03EC500BD6AF0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8E7938C81AA03EC500BD6AF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8E7B20401AAD4375009E598D /* TempInfoDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfoDB.swift; sourceTree = "<group>"; };
+		8E7B20421AAD4850009E598D /* TempInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfo.swift; sourceTree = "<group>"; };
 		8E847A501A89031400FD8CCD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8E8D9D3B1A9F2BD500DB7A79 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		8E8D9D4A1A9F32F900DB7A79 /* Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
@@ -90,6 +98,8 @@
 				8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */,
 				8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */,
 				8E7938C51AA03E6300BD6AF0 /* TwoDViewController.swift */,
+				8E3C2F9E1AADBE570023AEF1 /* TempInfoTableViewController.swift */,
+				8E3C2FA01AADCC4F0023AEF1 /* WaitingViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -98,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */,
+				8E7B20401AAD4375009E598D /* TempInfoDB.swift */,
 			);
 			name = dbHelper;
 			sourceTree = "<group>";
@@ -115,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				8E6867771A8BC23000C6AD70 /* MobileUser.swift */,
+				8E7B20421AAD4850009E598D /* TempInfo.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -282,11 +294,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E6867761A8B0C2400C6AD70 /* MobileUserDB.swift in Sources */,
+				8E3C2F9F1AADBE570023AEF1 /* TempInfoTableViewController.swift in Sources */,
+				8E7B20411AAD4375009E598D /* TempInfoDB.swift in Sources */,
 				8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */,
 				8EF05CD21A7C774200CCE8BF /* ViewController.swift in Sources */,
+				8E3C2FA11AADCC4F0023AEF1 /* WaitingViewController.swift in Sources */,
 				8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */,
 				8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */,
 				8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */,
+				8E7B20431AAD4850009E598D /* TempInfo.swift in Sources */,
 				8E8D9D3C1A9F2BD500DB7A79 /* Alamofire.swift in Sources */,
 				8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */,
 				8E7938C61AA03E6300BD6AF0 /* TwoDViewController.swift in Sources */,

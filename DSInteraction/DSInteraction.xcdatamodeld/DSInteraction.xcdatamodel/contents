@@ -8,7 +8,13 @@
         <attribute name="point" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="TempInfo" representedClassName="TempInfo" syncable="YES">
+        <attribute name="cinema" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seat" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="MobileUser" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="TempInfo" positionX="-63" positionY="27" width="128" height="90"/>
     </elements>
 </model>

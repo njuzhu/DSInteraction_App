@@ -14,6 +14,7 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
 
     var picker:UIImagePickerController?=UIImagePickerController()
 //    var popover:UIPopoverController?=nil
+    var mainViewSegue: String = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,16 +1,14 @@
 //
-//  MainView
-//
-//  MainViewController.swift
+//  WaitingViewController.swift
 //  DSInteraction
 //
-//  Created by Zhu on 15/2/9.
+//  Created by Zhu on 15/3/9.
 //  Copyright (c) 2015年 Zhu. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class WaitingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +31,5 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var send: UIViewController = segue.destinationViewController as UIViewController
-        send.setValue("mainViewSegue", forKey: "mainViewSegue")
-    }
 
 }
