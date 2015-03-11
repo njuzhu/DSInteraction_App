@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MyInfoTableViewController: UITableViewController, UIImagePickerControllerDelegate {
+class MyInfoTableViewController: UITableViewController, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate {
 
+    //@IBOutlet var testImageView: UIImageView!
     var mobileUsers:Array<AnyObject> = MobileUserDB.getAllMobileUsers()
 
     var picker:UIImagePickerController?=UIImagePickerController()
@@ -19,6 +20,7 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        picker?.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -99,7 +101,7 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
         if(indexPath.row == 0) {
             var iconImage = cell.viewWithTag(4) as UIImageView
             if(isDiy) {
-                iconImage.image = UIImage(named: value)
+                iconImage.image = UIImage(contentsOfFile: value)
             } else {
                 iconImage.image = UIImage(named: "icon_default.png")
             }
@@ -121,21 +123,48 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
     }
     
     func imageCellClicked() {
-        var alert:UIAlertController = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: {UIAlertAction in self.openCamera()})
-        var gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default, handler: {UIAlertAction in self.openGallary()})
-        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {UIAlertAction in self.imagePickerControllerDidCancel(self.picker!)})
-        
-        alert.addAction(cameraAction)
-        alert.addAction(gallaryAction)
-        alert.addAction(cancelAction)
-        
-        // Present the actionsheet
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            self.presentViewController(alert, animated: true, completion: nil)
+        if objc_getClass("UIAlertController") != nil {
+            // use UIAlertController
+            var alert:UIAlertController=UIAlertController(title: "头像选择", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            var cameraAction = UIAlertAction(title: "相机", style: UIAlertActionStyle.Default, handler: {UIAlertAction in self.openCamera()})
+            var gallaryAction = UIAlertAction(title: "相册", style: UIAlertActionStyle.Default, handler: {UIAlertAction in self.openGallary()})
+            var cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: {UIAlertAction in self.imagePickerControllerDidCancel(self.picker!)})
+            
+            alert.addAction(cameraAction)
+            alert.addAction(gallaryAction)
+            alert.addAction(cancelAction)
+            
+            // Present the actionsheet
+            if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
         } else {
-//            popover=UIPopoverController(contentViewController: alert)
-//            popover!.presentPopoverFromRect(btnClickMe.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+            // user UIActionSheet
+            var alert = UIActionSheet(title: "头像选择", delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil)
+            alert.addButtonWithTitle("相机")
+            alert.addButtonWithTitle("相册")
+            alert.addButtonWithTitle("取消")
+            alert.cancelButtonIndex = 2
+            // Present the actionsheet
+            if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+                alert.showFromRect(self.view.bounds, inView: self.view, animated: true)
+            }
+        }
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if (buttonIndex == actionSheet.cancelButtonIndex) {
+            return
+        }
+        switch(buttonIndex) {
+        case 0:
+            self.openCamera()
+            break
+        case 1:
+            self.openGallary()
+            break
+        default:
+            return
         }
     }
     
@@ -144,6 +173,7 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
             println("camera")
             picker?.sourceType = UIImagePickerControllerSourceType.Camera
             self.presentViewController(picker!, animated: true, completion: nil)
+            
         } else {
             openGallary()
         }
@@ -154,31 +184,52 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
         picker?.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             self.presentViewController(picker!, animated: true, completion: nil)
-        } else {
-//            popover=UIPopoverController(contentViewController: picker)
-//            popover!.presentPopoverFromRect(btnClickMe.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
+        
+        var fileManager: NSFileManager = NSFileManager.defaultManager()
+        if(mobileUsers.count > 0) {
+            var mobileUser = mobileUsers[0] as MobileUser
+            let pathOrigin: String = mobileUser.image
+            if fileManager.fileExistsAtPath(pathOrigin) {
+//            println("removeFile")
+                fileManager.removeItemAtPath(pathOrigin, error: nil)
+            }
+        }
+        
+        var image: UIImage = info[UIImagePickerControllerOriginalImage] as UIImage
+        var resizeImage: UIImage = self.resizeImage(image, toSize: CGSizeMake(50, 50))
+//        println(resizeImage.description)
+        var description: String = resizeImage.description
+        var range = description.rangeOfString("<")?.startIndex
+        var fromIndex: Int = distance(description.startIndex, range!)
+        fromIndex += 10
+        range = description.rangeOfString(">")?.startIndex
+        var endIndex: Int = distance(description.startIndex, range!)
+        let filename: String = description.substringWithRange(Range<String.Index>(start: advance(description.startIndex, fromIndex), end: advance(description.startIndex, endIndex))).stringByAppendingString(".png")
+        var path: String = self.documentsDirectory().stringByAppendingPathComponent(filename)
+        
+        UIImagePNGRepresentation(resizeImage).writeToFile(path, atomically: true)
+//        println("path:\(path)")
+        
         if(mobileUsers.count > 0) {
             var mobileUser = mobileUsers[0] as MobileUser
             var dataDict = Dictionary<String, AnyObject>()
-            dataDict["image"] = "icon_1.png"
+            dataDict["image"] = path
             MobileUserDB.updateMobileUser(dataDict, obj: mobileUser)
+//            var user = MobileUserDB.getAllMobileUsers()[0] as MobileUser
+//            println("user.image:\(user.image)")
         }
-//        imageView.image=info[UIImagePickerControllerOriginalImage] as UIImage
-        println("finish picking")
+        self.tableView.reloadData()
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        println("picker cancel")
-        
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
-    
+
     @IBAction func logoutClicked(sender: UIButton) {
         MobileUserDB.deleteAllMobileUsers()
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -186,6 +237,30 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
         self.presentViewController(viewController, animated: true, completion: nil)
     }
 
+    // Get the documents Directory
+    func documentsDirectory() -> String {
+        let documentsFolderPathArray = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        var documentsFolderPath = ""
+        if documentsFolderPathArray.count > 0 {
+            documentsFolderPath = documentsFolderPathArray[0] as String
+        }
+//        println(documentsFolderPath)
+        return documentsFolderPath
+    }
+    // Get path for a file in the directory
+    func fileInDocumentsDirectory(filename: String) -> String {
+        return documentsDirectory().stringByAppendingPathComponent(filename)
+    }
+    
+    // Resize image
+    func resizeImage(image: UIImage, toSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContext(CGSizeMake(toSize.width, toSize.height))
+        image.drawInRect(CGRectMake(0, 0, toSize.width, toSize.height))
+        var resizeImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizeImage
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

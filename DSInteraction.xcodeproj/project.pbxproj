@@ -12,6 +12,7 @@
 		8E6867761A8B0C2400C6AD70 /* MobileUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */; };
 		8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867771A8BC23000C6AD70 /* MobileUser.swift */; };
 		8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */; };
+		8E73824A1AAE981800C0E2BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7382491AAE981800C0E2BA /* UIKit.framework */; };
 		8E7938C61AA03E6300BD6AF0 /* TwoDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7938C51AA03E6300BD6AF0 /* TwoDViewController.swift */; };
 		8E7938C91AA03EC500BD6AF0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7938C71AA03EC500BD6AF0 /* AVFoundation.framework */; };
 		8E7938CA1AA03EC500BD6AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7938C81AA03EC500BD6AF0 /* Foundation.framework */; };
@@ -46,6 +47,7 @@
 		8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserDB.swift; sourceTree = "<group>"; };
 		8E6867771A8BC23000C6AD70 /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUser.swift; sourceTree = "<group>"; };
 		8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameEditViewController.swift; sourceTree = "<group>"; };
+		8E7382491AAE981800C0E2BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8E7938C51AA03E6300BD6AF0 /* TwoDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoDViewController.swift; sourceTree = "<group>"; };
 		8E7938C71AA03EC500BD6AF0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8E7938C81AA03EC500BD6AF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E73824A1AAE981800C0E2BA /* UIKit.framework in Frameworks */,
 				8E7938C91AA03EC500BD6AF0 /* AVFoundation.framework in Frameworks */,
 				8E7938CA1AA03EC500BD6AF0 /* Foundation.framework in Frameworks */,
 			);
@@ -134,6 +137,7 @@
 		8EF05CBE1A7C774200CCE8BF = {
 			isa = PBXGroup;
 			children = (
+				8E7382491AAE981800C0E2BA /* UIKit.framework */,
 				8E7938C71AA03EC500BD6AF0 /* AVFoundation.framework */,
 				8E7938C81AA03EC500BD6AF0 /* Foundation.framework */,
 				8EF05CC91A7C774200CCE8BF /* DSInteraction */,

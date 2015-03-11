@@ -107,14 +107,7 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             self.session.stopRunning()
             
             self.parseStringValue(stringValue)
-            //        println("stringValue:\(stringValue)")
             
-            //        var alertView = UIAlertView()
-            //        alertView.delegate=self
-            //        alertView.title = "二维码"
-            //        alertView.message = "扫到的二维码内容为:\(stringValue)"
-            //        alertView.addButtonWithTitle("确认")
-            //        alertView.show()
             let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let tempInfoTableViewController : TempInfoTableViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TempInfoTableViewController") as TempInfoTableViewController
             
