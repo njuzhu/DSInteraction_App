@@ -10,12 +10,9 @@ import UIKit
 
 class MyInfoTableViewController: UITableViewController, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate {
 
-    //@IBOutlet var testImageView: UIImageView!
     var mobileUsers:Array<AnyObject> = MobileUserDB.getAllMobileUsers()
 
     var picker:UIImagePickerController?=UIImagePickerController()
-//    var popover:UIPopoverController?=nil
-    var mainViewSegue: String = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()

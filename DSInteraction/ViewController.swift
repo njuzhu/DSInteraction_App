@@ -88,10 +88,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
         }
     }
-    
-    @IBAction func visit(sender: AnyObject) {
-        println("visit")
-    }
  
     // MARK: -Regex Match
     func regexMatch(pattern:String,matchString:String) -> Bool{
@@ -99,6 +95,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let expression = NSRegularExpression(pattern: pattern, options: .CaseInsensitive, error: &error)
         let matches = expression?.matchesInString(matchString, options: nil, range: NSMakeRange(0, countElements(matchString)))
         return matches?.count > 0
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == "visitor" {
+                var navigationController: UINavigationController = segue.destinationViewController as UINavigationController
+                var mainViewController: MainViewController = navigationController.topViewController as MainViewController
+                mainViewController.visitor = "visitor"
+            }
+        }
     }
 }
 

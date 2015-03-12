@@ -12,6 +12,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var visitor: String = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,9 +36,32 @@ class MainViewController: UIViewController {
     }
     */
     
+    @IBAction func personalInfoClicked(sender: AnyObject) {
+        if(!visitor.isEmpty) {
+            var alertView = UIAlertView()
+            alertView.delegate=self
+            alertView.title = "未登录用户"
+            alertView.message = "请先登录，游客无个人信息"
+            alertView.addButtonWithTitle("确认")
+            alertView.show()
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let viewController : ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController") as ViewController
+            self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let myInfoTableViewController : MyInfoTableViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MyInfoTableViewController") as MyInfoTableViewController
+            self.navigationController?.pushViewController(myInfoTableViewController, animated: true)
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var send: UIViewController = segue.destinationViewController as UIViewController
-        send.setValue("mainViewSegue", forKey: "mainViewSegue")
+        if let identifier = segue.identifier {
+            if identifier == "scan" {
+                var twoDViewController: TwoDViewController = segue.destinationViewController as TwoDViewController
+                twoDViewController.scan = "scan"
+            }
+        }
     }
 
 }

@@ -15,14 +15,14 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     let session = AVCaptureSession()
     var layer: AVCaptureVideoPreviewLayer?
-    var mainViewSegue: String = String()
+    var scan: String = String()
     var isFirst: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if(!self.mainViewSegue.isEmpty) {
-            println(self.mainViewSegue)
+        if(!self.scan.isEmpty) {
+            println(self.scan)
         }
         
         // Do any additional setup after loading the view.
@@ -98,7 +98,7 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
-        if(!self.mainViewSegue.isEmpty) || !isFirst {
+        if(!self.scan.isEmpty) || !isFirst {
             var stringValue = String()
             if metadataObjects.count > 0 {
                 var metadataObject = metadataObjects[0] as AVMetadataMachineReadableCodeObject
@@ -114,7 +114,7 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             self.navigationController?.pushViewController(tempInfoTableViewController, animated: true)
             //        self.presentViewController(tempInfoTableViewController, animated: true, completion: nil)
             println("finishScan")
-            self.mainViewSegue = ""
+            self.scan = ""
             self.isFirst = true
         } else {
             self.isFirst = false
