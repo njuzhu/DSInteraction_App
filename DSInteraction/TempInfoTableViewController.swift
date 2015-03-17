@@ -12,14 +12,14 @@ class TempInfoTableViewController: UITableViewController {
     
     var tempInfos:Array<AnyObject> = TempInfoDB.getAllTempInfos()
     
+    var gameType: String = String()
+    var startTime: String = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        println("gameType: \(gameType)")
+//        println("startTime: \(startTime)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +40,6 @@ class TempInfoTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return 3
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var tempInfo: TempInfo!
@@ -73,8 +72,17 @@ class TempInfoTableViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func enterGame(sender: AnyObject) {
+//        println("enterGame")
+        if self.gameType == "赛车" {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let carGameViewController : CarGameViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CarGameViewController") as CarGameViewController
+            carGameViewController.startTime = self.startTime
+            self.presentViewController(carGameViewController, animated: true, completion: nil)
+        }
+        
+    }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

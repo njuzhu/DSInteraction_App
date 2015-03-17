@@ -18,6 +18,9 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     var scan: String = String()
     var isFirst: Bool = true
     
+    var gameType: String = ""
+    var startTime: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,9 +113,11 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             
             let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let tempInfoTableViewController : TempInfoTableViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TempInfoTableViewController") as TempInfoTableViewController
-            
+            tempInfoTableViewController.gameType = self.gameType
+            tempInfoTableViewController.startTime = self.startTime
             self.navigationController?.pushViewController(tempInfoTableViewController, animated: true)
             //        self.presentViewController(tempInfoTableViewController, animated: true, completion: nil)
+//            var tempInfoTableViewController: TempInfoTableViewController = 
             println("finishScan")
             self.scan = ""
             self.isFirst = true
@@ -121,25 +126,44 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         }
     }
     
-    //电影院：大华；电影厅：2；座位：3排5
+    
+    
+    //电影院：大华；电影厅：2；座位：3排5；游戏类型：赛车；开始时间：2015-03-15 13:30:00
     func parseStringValue(stringValue: String) {
         var range = stringValue.rangeOfString("电影院：")?.startIndex
         var fromIndex: Int = distance(stringValue.startIndex, range!)
         fromIndex += 4
         var i = 0
-        var isFirst = true
+//        var isFirst = true
         var endIndex1 = -1
         var endIndex2 = -1
+        var endIndex3 = -1
+        var endIndex4 = -1
         for c in stringValue {
-            if c == "；" && isFirst {
+            if c == "；" && endIndex1 == -1 {
                 endIndex1 = i
-                isFirst = false
+                i++
+                continue
+//                isFirst = false
             }
-            if c == "；" && !isFirst {
+            if c == "；" && endIndex1 != -1 && endIndex2 == -1 {
                 endIndex2 = i
+                i++
+                continue
+            }
+            if c == "；" && endIndex1 != -1 && endIndex2 != -1 && endIndex3 == -1 {
+                endIndex3 = i
+                i++
+                continue
+            }
+            if c == "；" && endIndex1 != -1 && endIndex2 != -1 && endIndex3 != -1 && endIndex4 == -1 {
+                endIndex4 = i
+                i++
+                continue
             }
             i++
         }
+//        println("\(endIndex1); \(endIndex2); \(endIndex3); \(endIndex4)")
         let cinema: String = stringValue.substringWithRange(Range<String.Index>(start: advance(stringValue.startIndex, fromIndex), end: advance(stringValue.startIndex, endIndex1)))
         
         range = stringValue.rangeOfString("电影厅：")?.startIndex
@@ -150,7 +174,23 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         range = stringValue.rangeOfString("座位：")?.startIndex
         fromIndex = distance(stringValue.startIndex, range!)
         fromIndex += 3
-        let seat: String = stringValue.substringWithRange(Range<String.Index>(start: advance(stringValue.startIndex, fromIndex), end: stringValue.endIndex))
+        let seat: String = stringValue.substringWithRange(Range<String.Index>(start: advance(stringValue.startIndex, fromIndex), end: advance(stringValue.startIndex, endIndex3)))
+        
+        range = stringValue.rangeOfString("游戏类型：")?.startIndex
+        fromIndex = distance(stringValue.startIndex, range!)
+        fromIndex += 5
+        gameType = stringValue.substringWithRange(Range<String.Index>(start: advance(stringValue.startIndex, fromIndex), end: advance(stringValue.startIndex, endIndex4)))
+        
+        range = stringValue.rangeOfString("开始时间：")?.startIndex
+        fromIndex = distance(stringValue.startIndex, range!)
+        fromIndex += 5
+        startTime = stringValue.substringWithRange(Range<String.Index>(start: advance(stringValue.startIndex, fromIndex), end: stringValue.endIndex))
+        
+//        println("cinema:\(cinema)")
+//        println("hall:\(hall)")
+//        println("seat:\(seat)")
+        println("gameType:\(gameType)")
+        println("startTime:\(startTime)")
         
         saveLocalData(cinema, hall: hall, seat: seat)
     }
@@ -162,6 +202,8 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         dictParam["cinema"] = cinema
         dictParam["hall"] = hall
         dictParam["seat"] = seat
+//        dictParam["gameType"] = gameType
+//        dictParam["startTime"] = startTime
         TempInfoDB.insertTempInfo(dictParam)
         
         var allTempInfos = TempInfoDB.getAllTempInfos()
@@ -170,9 +212,24 @@ class TwoDViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             let cinemaT = info.cinema
             let hallT = info.hall
             let seatT = info.seat
-            println("cinemaT:\(cinema); hallT:\(hallT); seat:\(seatT)")
+//            var gameTypeT: NSString = info.gameType as NSString!
+//            let startTimeT: String! = info.startTime
+//            let gameTypeT = "gameType"
+//            var gameTypeT: String = info.gameType as String
+//            let startTimeT = info.startTime
+            println("cinemaT:\(cinemaT); hallT:\(hallT); seat:\(seatT); ")
         }
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if let identifier = segue.identifier {
+//            if identifier == "scanSuccess" {
+//                var twoDViewController: TwoDViewController = segue.destinationViewController as TwoDViewController
+//                twoDViewController.scan = "scan"
+//                println("prepareForSegue.scanSuccess")
+//            }
+//        }
+//    }
     
     /*
     // MARK: - Navigation

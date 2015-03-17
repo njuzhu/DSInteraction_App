@@ -265,7 +265,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <segue destination="vcg-n0-i9W" kind="modal" id="FAt-Hi-AKa"/>
+                                <action selector="enterGame:" destination="GiP-RS-FrF" eventType="touchUpInside" id="7Cw-IJ-M2A"/>
                             </connections>
                         </button>
                         <prototypes>
@@ -341,29 +341,60 @@
             </objects>
             <point key="canvasLocation" x="1325" y="-221"/>
         </scene>
-        <!--游戏等待-->
-        <scene sceneID="vuE-EK-ju2">
+        <!--Car Game View Controller-->
+        <scene sceneID="sfq-Mr-hwN">
             <objects>
-                <viewController restorationIdentifier="WaitingViewController" storyboardIdentifier="WaitingViewController" id="vcg-n0-i9W" customClass="WaitingViewController" customModule="DSInteraction" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nif-pR-S5h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <viewController restorationIdentifier="CarGameViewController" storyboardIdentifier="CarGameViewController" id="a10-Ry-gsd" customClass="CarGameViewController" customModule="DSInteraction" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eJg-fv-E8N">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请耐心等待游戏开始" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AcP-pE-qKF">
-                                <rect key="frame" x="97" y="123" width="153" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请等待游戏开始……" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vhk-5b-tUe">
+                                <rect key="frame" x="268" y="117" width="167" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一场游戏将在10:00开始" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rOf-NO-bop">
+                                <rect key="frame" x="253" y="179" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E2j-M0-TjA">
+                                <rect key="frame" x="419" y="57" width="121" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RZP-Uo-6hO">
+                                <rect key="frame" x="336" y="236" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="刷新">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startBtn:" destination="a10-Ry-gsd" eventType="touchUpInside" id="mWo-sW-5I1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="游戏等待" id="OVT-G0-ZbQ"/>
+                    <navigationItem key="navigationItem" id="mNa-3Z-L4w"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="point" destination="E2j-M0-TjA" id="U3R-TV-yIL"/>
+                        <outlet property="startLB" destination="RZP-Uo-6hO" id="fPv-Ms-MBI"/>
+                        <outlet property="waitlabel" destination="Vhk-5b-tUe" id="dfF-rT-iJf"/>
+                        <outlet property="waittimelabel" destination="rOf-NO-bop" id="5j6-5e-jkG"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BYY-OW-6G3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPQ-oq-zjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="-221"/>
+            <point key="canvasLocation" x="1960" y="-258"/>
         </scene>
         <!--个人信息-->
         <scene sceneID="YpI-Q5-OgZ">

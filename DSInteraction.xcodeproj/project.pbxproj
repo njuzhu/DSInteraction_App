@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8E3C2F9F1AADBE570023AEF1 /* TempInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C2F9E1AADBE570023AEF1 /* TempInfoTableViewController.swift */; };
-		8E3C2FA11AADCC4F0023AEF1 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C2FA01AADCC4F0023AEF1 /* WaitingViewController.swift */; };
 		8E6867761A8B0C2400C6AD70 /* MobileUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */; };
 		8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6867771A8BC23000C6AD70 /* MobileUser.swift */; };
 		8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */; };
@@ -17,10 +16,12 @@
 		8E7938C91AA03EC500BD6AF0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7938C71AA03EC500BD6AF0 /* AVFoundation.framework */; };
 		8E7938CA1AA03EC500BD6AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7938C81AA03EC500BD6AF0 /* Foundation.framework */; };
 		8E7B20411AAD4375009E598D /* TempInfoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B20401AAD4375009E598D /* TempInfoDB.swift */; };
-		8E7B20431AAD4850009E598D /* TempInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B20421AAD4850009E598D /* TempInfo.swift */; };
 		8E847A511A89031400FD8CCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E847A501A89031400FD8CCD /* MainViewController.swift */; };
 		8E8D9D3C1A9F2BD500DB7A79 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D9D3B1A9F2BD500DB7A79 /* Alamofire.swift */; };
 		8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */; };
+		8EDBE2B01AB55BB6003461D3 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EDBE2AF1AB55BB6003461D3 /* data.plist */; };
+		8EDBE2B21AB55BFF003461D3 /* CarGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDBE2B11AB55BFF003461D3 /* CarGameViewController.swift */; };
+		8EDBE2B41AB56A20003461D3 /* TempInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDBE2B31AB56A1F003461D3 /* TempInfo.swift */; };
 		8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */; };
 		8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */; };
 		8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */; };
@@ -43,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		8E3C2F9E1AADBE570023AEF1 /* TempInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfoTableViewController.swift; sourceTree = "<group>"; };
-		8E3C2FA01AADCC4F0023AEF1 /* WaitingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
 		8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserDB.swift; sourceTree = "<group>"; };
 		8E6867771A8BC23000C6AD70 /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUser.swift; sourceTree = "<group>"; };
 		8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameEditViewController.swift; sourceTree = "<group>"; };
@@ -52,11 +52,13 @@
 		8E7938C71AA03EC500BD6AF0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8E7938C81AA03EC500BD6AF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8E7B20401AAD4375009E598D /* TempInfoDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfoDB.swift; sourceTree = "<group>"; };
-		8E7B20421AAD4850009E598D /* TempInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfo.swift; sourceTree = "<group>"; };
 		8E847A501A89031400FD8CCD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8E8D9D3B1A9F2BD500DB7A79 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		8E8D9D4A1A9F32F900DB7A79 /* Alamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
 		8EBE09F61A9846C8000881FF /* MyInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoTableViewController.swift; sourceTree = "<group>"; };
+		8EDBE2AF1AB55BB6003461D3 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		8EDBE2B11AB55BFF003461D3 /* CarGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarGameViewController.swift; sourceTree = "<group>"; };
+		8EDBE2B31AB56A1F003461D3 /* TempInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfo.swift; sourceTree = "<group>"; };
 		8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8EF05CC71A7C774200CCE8BF /* DSInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF05CCB1A7C774200CCE8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 				8E6B32661A9DBCAD00638E4B /* NicknameEditViewController.swift */,
 				8E7938C51AA03E6300BD6AF0 /* TwoDViewController.swift */,
 				8E3C2F9E1AADBE570023AEF1 /* TempInfoTableViewController.swift */,
-				8E3C2FA01AADCC4F0023AEF1 /* WaitingViewController.swift */,
+				8EDBE2B11AB55BFF003461D3 /* CarGameViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -129,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8E6867771A8BC23000C6AD70 /* MobileUser.swift */,
-				8E7B20421AAD4850009E598D /* TempInfo.swift */,
+				8EDBE2B31AB56A1F003461D3 /* TempInfo.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 		8EF05CCA1A7C774200CCE8BF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EDBE2AF1AB55BB6003461D3 /* data.plist */,
 				8EF05CCB1A7C774200CCE8BF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -279,6 +282,7 @@
 			files = (
 				8EF05CD51A7C774200CCE8BF /* Main.storyboard in Resources */,
 				8EF05CDA1A7C774200CCE8BF /* LaunchScreen.xib in Resources */,
+				8EDBE2B01AB55BB6003461D3 /* data.plist in Resources */,
 				8EF05CD71A7C774200CCE8BF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,12 +305,12 @@
 				8E3C2F9F1AADBE570023AEF1 /* TempInfoTableViewController.swift in Sources */,
 				8E7B20411AAD4375009E598D /* TempInfoDB.swift in Sources */,
 				8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */,
+				8EDBE2B41AB56A20003461D3 /* TempInfo.swift in Sources */,
 				8EF05CD21A7C774200CCE8BF /* ViewController.swift in Sources */,
-				8E3C2FA11AADCC4F0023AEF1 /* WaitingViewController.swift in Sources */,
+				8EDBE2B21AB55BFF003461D3 /* CarGameViewController.swift in Sources */,
 				8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */,
 				8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */,
 				8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */,
-				8E7B20431AAD4850009E598D /* TempInfo.swift in Sources */,
 				8E8D9D3C1A9F2BD500DB7A79 /* Alamofire.swift in Sources */,
 				8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */,
 				8E7938C61AA03E6300BD6AF0 /* TwoDViewController.swift in Sources */,

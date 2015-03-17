@@ -187,9 +187,11 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         
+        var filenamePrefix: String = String()
         var fileManager: NSFileManager = NSFileManager.defaultManager()
         if(mobileUsers.count > 0) {
             var mobileUser = mobileUsers[0] as MobileUser
+            filenamePrefix = mobileUser.email.stringByAppendingString(".")
             let pathOrigin: String = mobileUser.image
             if fileManager.fileExistsAtPath(pathOrigin) {
 //            println("removeFile")
@@ -206,11 +208,12 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
         fromIndex += 10
         range = description.rangeOfString(">")?.startIndex
         var endIndex: Int = distance(description.startIndex, range!)
-        let filename: String = description.substringWithRange(Range<String.Index>(start: advance(description.startIndex, fromIndex), end: advance(description.startIndex, endIndex))).stringByAppendingString(".png")
+        var filename: String = description.substringWithRange(Range<String.Index>(start: advance(description.startIndex, fromIndex), end: advance(description.startIndex, endIndex))).stringByAppendingString(".png")
+        filename = filenamePrefix.stringByAppendingString(filename)
         var path: String = self.documentsDirectory().stringByAppendingPathComponent(filename)
         
         UIImagePNGRepresentation(resizeImage).writeToFile(path, atomically: true)
-//        println("path:\(path)")
+        println("path:\(path)")
         
         if(mobileUsers.count > 0) {
             var mobileUser = mobileUsers[0] as MobileUser
@@ -221,6 +224,8 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
 //            println("user.image:\(user.image)")
         }
         self.tableView.reloadData()
+        
+        self.uploadImage(UIImagePNGRepresentation(resizeImage))
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -257,6 +262,106 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
         UIGraphicsEndImageContext()
         return resizeImage
     }
+    
+    func uploadImage(data: NSData) {
+//        let data=UIImagePNGRepresentation(img)//把图片转成data
+        
+        let uploadurl:String="http://localhost:8080/DSInteraction/mobile/uploadImage.action"//设置服务器接收地址
+        let request=NSMutableURLRequest(URL:NSURL(string:uploadurl)!)
+        
+        request.HTTPMethod="POST"//设置请求方式
+        var boundary:String="-------------------21212222222222222222222"
+        var contentType:String="multipart/form-data;boundary="+boundary
+        request.addValue(contentType, forHTTPHeaderField:"Content-Type")
+        var body=NSMutableData()
+        body.appendData(NSString(format:"\r\n--\(boundary)\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format:"Content-Disposition:form-data;name=\"userfile\";filename=\"dd.jpg\"\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData(NSString(format:"Content-Type:application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
+//        body.appendData(data)
+        body.appendData(NSString(format:"\r\n--\(boundary)").dataUsingEncoding(NSUTF8StringEncoding)!)
+        println("body:\(body)")
+        request.HTTPBody=body
+        
+        let que=NSOperationQueue()
+        
+//        println("request:\(request.HTTPBody)")
+        NSURLConnection.sendAsynchronousRequest(request, queue: que, completionHandler: {
+            (response, data, error) ->Void in
+            
+            if (error != nil){
+                println(error)
+            }else{
+                //Handle data in NSData type
+                var tr:String=NSString(data:data,encoding:NSUTF8StringEncoding)!
+                println(tr)
+                
+            }
+        })
+    }
+    
+//    
+//    func uploadImage(imageData: NSData) {
+//        // init paramters Dictionary
+//        var parameters = [
+//            "task": "task",
+//            "variable1": "var"
+//        ]
+//        
+//        // add addtionial parameters
+//        parameters["userId"] = "27"
+//        parameters["body"] = "This is the body text."
+//        
+//        // example image data
+////        let image = UIImage(named: "177143.jpg")
+////        let imageData = UIImagePNGRepresentation(image)
+//        
+//        // CREATE AND SEND REQUEST ----------
+//        let urlRequest = urlRequestWithComponents("http://localhost:8080/DSInteraction/mobile/uploadImage.action", parameters: parameters, imageData: imageData)
+//        
+//        
+//        println("urlRequest.1:\(urlRequest.1)")
+//        
+//        upload(urlRequest.0, urlRequest.1)
+//            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+//                println("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
+//            }
+//            .responseJSON { (request, response, JSON, error) in
+//                println("REQUEST \(request)")
+//                println("RESPONSE \(response)")
+//                println("JSON \(JSON)")
+//                println("ERROR \(error)")
+//        }
+//    }
+//    
+//    // this function creates the required URLRequestConvertible and NSData we need to use Alamofire.upload
+//    func urlRequestWithComponents(urlString:String, parameters:Dictionary<String, String>, imageData:NSData) -> (URLRequestConvertible, NSData) {
+//        
+//        // create url request to send
+//        var mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+//        mutableURLRequest.HTTPMethod = Method.POST.rawValue
+//        let boundaryConstant = "myRandomBoundary12345";
+//        let contentType = "multipart/form-data;boundary="+boundaryConstant
+//        mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
+//        
+//        // create upload data to send
+//        let uploadData = NSMutableData()
+//        
+//        // add image
+//        uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+//        uploadData.appendData("Content-Disposition: form-data; name=\"file\"; filename=\"file.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+//        uploadData.appendData("Content-Type: image/png\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+//        uploadData.appendData(imageData)
+//        
+//        // add parameters
+//        for (key, value) in parameters {
+//            uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+//            uploadData.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
+//        }
+//        uploadData.appendData("\r\n--\(boundaryConstant)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+//        
+//        // return URLRequestConvertible and NSData
+//        return (ParameterEncoding.URL.encode(mutableURLRequest, parameters: nil).0, uploadData)
+//    }
     
     /*
     // Override to support conditional editing of the table view.
