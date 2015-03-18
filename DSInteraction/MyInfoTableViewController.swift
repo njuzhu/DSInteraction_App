@@ -225,7 +225,7 @@ class MyInfoTableViewController: UITableViewController, UIImagePickerControllerD
         }
         self.tableView.reloadData()
         
-        self.uploadImage(UIImagePNGRepresentation(resizeImage))
+//        self.uploadImage(UIImagePNGRepresentation(resizeImage))
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {

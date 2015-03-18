@@ -72,6 +72,7 @@ class TempInfoTableViewController: UITableViewController {
         return cell
     }
     
+    //电影院：大华；电影厅：2；座位：3排5；游戏类型：问答；开始时间：2015-03-15 13:30:00
     @IBAction func enterGame(sender: AnyObject) {
 //        println("enterGame")
         if self.gameType == "赛车" {
@@ -79,8 +80,11 @@ class TempInfoTableViewController: UITableViewController {
             let carGameViewController : CarGameViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CarGameViewController") as CarGameViewController
             carGameViewController.startTime = self.startTime
             self.presentViewController(carGameViewController, animated: true, completion: nil)
+        } else if self.gameType == "问答" {
+            println("enter question")
+            var vc = QuestionViewController()
+            self.presentViewController(vc, animated: true, completion: nil)
         }
-        
     }
     
     /*

@@ -22,6 +22,11 @@
 		8EDBE2B01AB55BB6003461D3 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EDBE2AF1AB55BB6003461D3 /* data.plist */; };
 		8EDBE2B21AB55BFF003461D3 /* CarGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDBE2B11AB55BFF003461D3 /* CarGameViewController.swift */; };
 		8EDBE2B41AB56A20003461D3 /* TempInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDBE2B31AB56A1F003461D3 /* TempInfo.swift */; };
+		8EE134671AB915810094ABC6 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE134661AB915810094ABC6 /* Answer.swift */; };
+		8EE134691AB915A00094ABC6 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE134681AB915A00094ABC6 /* Question.swift */; };
+		8EE1346B1AB915A90094ABC6 /* QuestionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1346A1AB915A90094ABC6 /* QuestionDB.swift */; };
+		8EE1346D1AB915B30094ABC6 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1346C1AB915B30094ABC6 /* QuestionViewController.swift */; };
+		8EE1346F1AB915BB0094ABC6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE1346E1AB915BB0094ABC6 /* ResultViewController.swift */; };
 		8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */; };
 		8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCC1A7C774200CCE8BF /* AppDelegate.swift */; };
 		8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EF05CCE1A7C774200CCE8BF /* DSInteraction.xcdatamodeld */; };
@@ -59,6 +64,11 @@
 		8EDBE2AF1AB55BB6003461D3 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		8EDBE2B11AB55BFF003461D3 /* CarGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarGameViewController.swift; sourceTree = "<group>"; };
 		8EDBE2B31AB56A1F003461D3 /* TempInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempInfo.swift; sourceTree = "<group>"; };
+		8EE134661AB915810094ABC6 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		8EE134681AB915A00094ABC6 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		8EE1346A1AB915A90094ABC6 /* QuestionDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDB.swift; sourceTree = "<group>"; };
+		8EE1346C1AB915B30094ABC6 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		8EE1346E1AB915BB0094ABC6 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		8EEF4BD61A8A3D03004588D4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8EF05CC71A7C774200CCE8BF /* DSInteraction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSInteraction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF05CCB1A7C774200CCE8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +115,8 @@
 				8E7938C51AA03E6300BD6AF0 /* TwoDViewController.swift */,
 				8E3C2F9E1AADBE570023AEF1 /* TempInfoTableViewController.swift */,
 				8EDBE2B11AB55BFF003461D3 /* CarGameViewController.swift */,
+				8EE1346C1AB915B30094ABC6 /* QuestionViewController.swift */,
+				8EE1346E1AB915BB0094ABC6 /* ResultViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -114,6 +126,7 @@
 			children = (
 				8E6867751A8B0C2400C6AD70 /* MobileUserDB.swift */,
 				8E7B20401AAD4375009E598D /* TempInfoDB.swift */,
+				8EE1346A1AB915A90094ABC6 /* QuestionDB.swift */,
 			);
 			name = dbHelper;
 			sourceTree = "<group>";
@@ -132,6 +145,8 @@
 			children = (
 				8E6867771A8BC23000C6AD70 /* MobileUser.swift */,
 				8EDBE2B31AB56A1F003461D3 /* TempInfo.swift */,
+				8EE134661AB915810094ABC6 /* Answer.swift */,
+				8EE134681AB915A00094ABC6 /* Question.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -301,17 +316,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE1346D1AB915B30094ABC6 /* QuestionViewController.swift in Sources */,
 				8E6867761A8B0C2400C6AD70 /* MobileUserDB.swift in Sources */,
 				8E3C2F9F1AADBE570023AEF1 /* TempInfoTableViewController.swift in Sources */,
 				8E7B20411AAD4375009E598D /* TempInfoDB.swift in Sources */,
+				8EE134691AB915A00094ABC6 /* Question.swift in Sources */,
 				8E6867781A8BC23000C6AD70 /* MobileUser.swift in Sources */,
+				8EE1346B1AB915A90094ABC6 /* QuestionDB.swift in Sources */,
 				8EDBE2B41AB56A20003461D3 /* TempInfo.swift in Sources */,
 				8EF05CD21A7C774200CCE8BF /* ViewController.swift in Sources */,
 				8EDBE2B21AB55BFF003461D3 /* CarGameViewController.swift in Sources */,
+				8EE134671AB915810094ABC6 /* Answer.swift in Sources */,
 				8EBE09F71A9846C8000881FF /* MyInfoTableViewController.swift in Sources */,
 				8EF05CCD1A7C774200CCE8BF /* AppDelegate.swift in Sources */,
 				8EEF4BD71A8A3D03004588D4 /* RegisterViewController.swift in Sources */,
 				8E8D9D3C1A9F2BD500DB7A79 /* Alamofire.swift in Sources */,
+				8EE1346F1AB915BB0094ABC6 /* ResultViewController.swift in Sources */,
 				8E6B32671A9DBCAD00638E4B /* NicknameEditViewController.swift in Sources */,
 				8E7938C61AA03E6300BD6AF0 /* TwoDViewController.swift in Sources */,
 				8EF05CD01A7C774200CCE8BF /* DSInteraction.xcdatamodeld in Sources */,

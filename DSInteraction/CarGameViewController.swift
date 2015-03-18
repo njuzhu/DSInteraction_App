@@ -47,12 +47,10 @@ class CarGameViewController: UIViewController {
                         counter++
                         
                     })
-                    
                 })
             }else{
                 println("unavailable")
             }
-            
         }
     }
     
