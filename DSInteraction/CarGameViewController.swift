@@ -12,7 +12,11 @@ class CarGameViewController: UIViewController {
     
     var startTime: String = String()
     
+    @IBAction func backBtn(sender: AnyObject) {
+    }
+    @IBOutlet weak var tipsLB: UITextView!
     @IBOutlet weak var waitlabel: UILabel!
+    @IBOutlet weak var reactLB: UILabel!
     @IBOutlet weak var waittimelabel: UILabel!
     @IBOutlet weak var point: UILabel!
     @IBOutlet weak var startLB: UIButton!
@@ -26,8 +30,10 @@ class CarGameViewController: UIViewController {
         if (nowtime.earlierDate(time2) == nowtime)&&(nowtime.laterDate(time1) == nowtime){
             
             btn.hidden = true
-            waitlabel.text = ""
+            waitlabel.hidden = true
             waittimelabel.hidden = true
+            tipsLB.hidden = false
+            reactLB.hidden = false
             
             cmm=CMMotionManager()
             cmm.accelerometerUpdateInterval=1
@@ -47,10 +53,12 @@ class CarGameViewController: UIViewController {
                         counter++
                         
                     })
+                    
                 })
             }else{
                 println("unavailable")
             }
+            
         }
     }
     
@@ -69,6 +77,12 @@ class CarGameViewController: UIViewController {
         //
         time1 = format.dateFromString("2015-03-05 21:20:00")!
         time2 = NSDate(timeInterval: 64000000,sinceDate: time1)
+        
+        tipsLB.hidden = true
+        reactLB.hidden = true
+        
+        
+        
     }
     
     override func shouldAutorotate() -> Bool {
@@ -90,9 +104,9 @@ class CarGameViewController: UIViewController {
             if(fabs(principle-y)<0.1){
                 points+=100
                 point.text="我的得分"+String(self.points)
-                waitlabel.text = "干得漂亮"
+                reactLB.text = "干得漂亮"
             } else {
-                waitlabel.text = "偏了偏了！！"
+                reactLB.text = "偏了偏了！！"
             }
             
         } else{
